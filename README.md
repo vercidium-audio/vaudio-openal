@@ -8,7 +8,7 @@ This repository requires the Vercidium Audio SDK v1.1.1 and OpenAL Soft to run:
 
 ## OpenAL Soft Setup
 
-Once OpenAL Soft is downloaded, copy the `openal-soft-1.25.1-bin\openal-soft-1.25.1-bin\bin\Win64\soft_oal.dll` file to the `lib` folder.
+Once OpenAL Soft is downloaded, copy the `openal-soft-1.25.1-bin\bin\Win64\soft_oal.dll` file to the `lib` folder.
 
 ## Vercidium Audio Setup
 
