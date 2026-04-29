@@ -8,11 +8,11 @@ This repository requires the Vercidium Audio SDK v1.1.1 and OpenAL Soft to run:
 
 ## OpenAL Soft Setup
 
-Once OpenAL Soft is downloaded, copy the `openal-soft-1.25.1-bin\bin\Win64\soft_oal.dll` file to the `lib` folder.
+Download OpenAL Soft from the link above, then copy the `openal-soft-1.25.1-bin/bin/Win64/soft_oal.dll` file to the `vaudio-openal/lib` folder.
 
 ## Vercidium Audio Setup
 
-You can either copy the entire vaudio folder to the `lib` folder:
+You can either copy the entire vaudio folder to the `vaudio-openal/lib` folder:
 
 ![screenshot of the vaudio-openal/lib folder. It contains soft_aoal.dll, and a folder called vaudio](docs/lib_folder.png)
 
@@ -30,13 +30,18 @@ Or edit `vaudio-openal.csproj` to point to the folder where the Vercidium Audio 
 - `resource/audio/speech.ogg` is an example file included for playback
 - `Scene.cs` creates a Vercidium Audio context and initialises an OpenAL device
 
-Scene.cs is where you can adjust ray counts, add primitives change materials and more. See the [Vercidium Audio docs](https://docs.vercidium.com/raytraced-audio/v110/Getting+Started) for more.
+Scene.cs is where you can adjust ray counts, add primitives, change materials and more. See the [Vercidium Audio docs](https://docs.vercidium.com/raytraced-audio/v110/Getting+Started) for more.
 
 ## Controls
 
 Open the project in Visual Studio 2022 or 2026, and press F5 to run the project.
 
-A debug window will appear, which renders the raytracing scene (primitives and rays), an echogram at the top, and raytracing stats in the bottom left.
+A debug window will appear that displays:
+- the raytracing scene (primitives and rays)
+- an echogram at the top
+- raytracing stats in the bottom left.
+
+Controls:
 
 - Use WASD and the mouse to move the camera
 - Press escape to release the mouse
