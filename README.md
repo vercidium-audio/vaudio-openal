@@ -14,7 +14,7 @@ Download OpenAL Soft from the link above, then copy the `openal-soft-1.25.1-bin/
 
 You can either copy the entire vaudio folder to the `vaudio-openal/lib` folder:
 
-![screenshot of the vaudio-openal/lib folder. It contains soft_aoal.dll, and a folder called vaudio](docs/lib_folder.png)
+![screenshot of the vaudio-openal/lib folder. It contains soft_oal.dll, and a folder called vaudio](docs/lib_folder.png)
 
 Or edit `vaudio-openal.csproj` to point to the folder where the Vercidium Audio SDK lives:
 
