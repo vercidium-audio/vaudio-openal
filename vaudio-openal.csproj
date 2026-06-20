@@ -31,9 +31,6 @@
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<!-- Copy the license file to the build directory -->
-		<Copy SourceFiles="$(VAudioDir)\vaudio.license" DestinationFolder="$(OutDir)" />
-
 		<!-- Copy native dependencies to the build directory -->
 		<Copy SourceFiles="$(VAudioDir)\glfw3.dll" DestinationFolder="$(OutDir)" />
 		<Copy SourceFiles="$(VAudioDir)\libSkiaSharp.dll" DestinationFolder="$(OutDir)" />

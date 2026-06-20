@@ -16,9 +16,9 @@ internal class OpenALSource
 
     internal void Play() => source.Play();
 
-    internal void UpdateFilter(vaudio.AudioFilter vFilter)
+    internal void UpdateFilter(vaudio.LowPassFilter vFilter)
     {
-        filter.SetGain(vFilter.gainLF, vFilter.gainHF);
+        filter.SetGain(vFilter.GainLF, vFilter.GainHF);
         source.SetFilter(reverbEffect, filter, filter);
     }
 }

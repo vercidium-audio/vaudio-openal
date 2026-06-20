@@ -28,7 +28,7 @@ internal class Scene
         // Create a Vercidium Audio context
         context = new()
         {
-            RenderingEnabled = true,
+            //RenderingEnabled = true,
             WorldSize = new(100),
             OnReverbUpdated = OnReverbUpdated
         };
@@ -47,8 +47,8 @@ internal class Scene
             Position = new vaudio.Vector3F(40, 50, 50),
 
             // Customise ray rendering
-            PermeationColor = new vaudio.Color(255, 150, 0, 150),
-            TrailColor = new vaudio.Color(255, 255, 255, 50),
+            //PermeationColor = new vaudio.Color(255, 150, 0, 150),
+            //TrailColor = new vaudio.Color(255, 255, 255, 50),
         };
 
         // Set the energy cap based on reverb ray counts
