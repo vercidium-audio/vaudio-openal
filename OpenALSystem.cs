@@ -84,14 +84,11 @@ internal class OpenALSystem
 
             alBufferID = AL.GenBuffer();
 
-            if (data.byteData != null)
-                AL.BufferData(alBufferID, data.format, data.byteData, data.byteCount, data.sampleRate);
-            else
-                AL.BufferData(alBufferID, data.format, data.shortData, data.byteCount, data.sampleRate);
+            AL.BufferData(alBufferID, data.format, data.shortData, data.byteCount, data.sampleRate);
         }
     }
 
-    internal OpenALSource CreateSound(vaudio.Vector3F position)
+    internal OpenALSource CreateSound(vaudio.Vector position)
     {
         var sourceID = AL.GenSource();
 
@@ -111,21 +108,21 @@ internal class OpenALSystem
         return new(source, reverbEffect);
     }
 
-    internal void SetListenerPosition(vaudio.Vector3F position, float pitch, float yaw)
+    internal void SetListenerPosition(vaudio.Vector position, float pitch, float yaw)
     {
         // The up vector MUST be perpendicular to the look direction, else spatialisation is distorted
         var cameraPitch = pitch;
         var cameraYaw = yaw;
 
-        var listenerOrientation = vaudio.Vector3F.FromPitchYaw(cameraPitch, cameraYaw);
-        var listenerUp = vaudio.Vector3F.FromPitchYaw(cameraPitch + MathF.PI / 2, cameraYaw);
+        var listenerOrientation = vaudio.Vector.FromPitchYaw(cameraPitch, cameraYaw);
+        var listenerUp = vaudio.Vector.FromPitchYaw(cameraPitch + MathF.PI / 2, cameraYaw);
 
         AL.Listenerfv(AL.AL_POSITION, [position.X, position.Y, position.Z]);
         AL.Listenerfv(AL.AL_VELOCITY, [0, 0, 0]);
         AL.Listenerfv(AL.AL_ORIENTATION, [listenerOrientation.X, listenerOrientation.Y, listenerOrientation.Z, listenerUp.X, listenerUp.Y, listenerUp.Z]);
     }
 
-    internal void UpdateReverb(vaudio.EAXReverbResults eax)
+    internal void UpdateReverb(vaudio.EAXReverb eax)
     {
         reverbEffect.reflectionsDelay = eax.ReflectionsDelay;
         reverbEffect.density = 0.5f;// Cannot change density at runtime without crackling
@@ -160,7 +157,6 @@ internal class OpenALSystem
     class SoundBufferData
     {
         public int format;
-        public byte[] byteData;
         public short[] shortData;
         public int byteCount;
         public int sampleRate;

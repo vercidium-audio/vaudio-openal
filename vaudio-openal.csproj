@@ -11,43 +11,23 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 			<Link>soft_oal.dll</Link>
 		</None>
+
+		<!-- Copy sound files -->
+		<None Include="resource\audio\speech.ogg">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<Link>resource\audio\speech.ogg</Link>
+		</None>
 	</ItemGroup>
 
-	<PropertyGroup>
-		<!-- Replace this with the path to your vaudio SDK -->
-		<VAudioDir>lib\vaudio</VAudioDir>
-	</PropertyGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="openal_soft_bindings" Version="1.0.8" />
-		<PackageReference Include="NVorbis" Version="0.10.5" />
-	</ItemGroup>
-
-	<!-- Add vaudio.dll to your project -->
 	<ItemGroup>
 		<Reference Include="vaudio">
-			<HintPath>$(VAudioDir)\vaudio.dll</HintPath>
+			<!-- Step 2 - replace this with the path to your Vercidium Audio .NET SDK -->
+			<HintPath>path\to\your\dotnet\vaudio.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<!-- Copy native dependencies to the build directory -->
-		<Copy SourceFiles="$(VAudioDir)\glfw3.dll" DestinationFolder="$(OutDir)" />
-		<Copy SourceFiles="$(VAudioDir)\libSkiaSharp.dll" DestinationFolder="$(OutDir)" />
-		<Copy SourceFiles="$(VAudioDir)\libHarfBuzzSharp.dll" DestinationFolder="$(OutDir)" />
-
-		<!-- Copy the project resource folder to the build directory -->
-		<ItemGroup>
-			<ProjectResourceFiles Include="$(ProjectDir)\resource\**\*.*" />
-		</ItemGroup>
-
-		<Copy SourceFiles="@(ProjectResourceFiles)" DestinationFolder="$(OutDir)\resource\%(RecursiveDir)" />
-
-		<!-- Copy the vaudio resource folder to the build directory -->
-		<ItemGroup>
-			<ResourceFiles Include="$(VAudioDir)\resource\**\*.*" />
-		</ItemGroup>
-
-		<Copy SourceFiles="@(ResourceFiles)" DestinationFolder="$(OutDir)\resource\%(RecursiveDir)" />
-	</Target>
+	<ItemGroup>
+		<PackageReference Include="openal_soft_bindings" Version="1.0.8" />
+		<PackageReference Include="NVorbis" Version="0.10.5" />
+	</ItemGroup>
 </Project>

@@ -1,10 +1,10 @@
 ## Vercidium Audio + OpenAL Soft Example
 
-This repository requires the Vercidium Audio SDK v1.1.1 and OpenAL Soft to run:
-- Download the Vercidium Audio SDK from [vercidium.com/audio](https://vercidium.com/audio)
+This repository requires the Vercidium Audio SDK v1.2.0 and OpenAL Soft to run:
+- Download the Vercidium Audio SDK from [vercidium.com](https://vercidium.com)
 - Download the OpenAL Soft DLL from [github.com/kcat/openal-soft](https://github.com/kcat/openal-soft/releases/tag/1.25.1)
 
-> Please note that the Vercidium Audio SDK is not free for commercial use. See [vercidium.com/audio](https://vercidium.com/audio)
+> Please note that the Vercidium Audio SDK is not free for commercial use. See [vercidium.com/eula](https://vercidium.com/eula)
 
 ## OpenAL Soft Setup
 
@@ -12,17 +12,15 @@ Download OpenAL Soft from the link above, then copy the `openal-soft-1.25.1-bin/
 
 ## Vercidium Audio Setup
 
-You can either copy the entire vaudio folder to the `vaudio-openal/lib` folder:
-
-![screenshot of the vaudio-openal/lib folder. It contains soft_oal.dll, and a folder called vaudio](docs/lib_folder.png)
-
-Or edit `vaudio-openal.csproj` to point to the folder where the Vercidium Audio SDK lives:
+Edit `vaudio-openal.csproj` to point to the folder where the Vercidium Audio SDK lives:
 
 ```xml
-<PropertyGroup>
-    <!-- Replace this with the path to your vaudio SDK -->
-    <VAudioDir>lib\vaudio</VAudioDir>
-</PropertyGroup>
+<ItemGroup>
+	<Reference Include="vaudio">
+		<!-- Step 2 - replace this with the path to your Vercidium Audio .NET SDK -->
+		<HintPath>path\to\your\dotnet\vaudio.dll</HintPath>
+	</Reference>
+</ItemGroup>
 ```
 
 ## File Overview
@@ -30,7 +28,7 @@ Or edit `vaudio-openal.csproj` to point to the folder where the Vercidium Audio 
 - `resource/audio/speech.ogg` is an example file included for playback
 - `Scene.cs` creates a Vercidium Audio context and initialises an OpenAL device
 
-Scene.cs is where you can adjust ray counts, add primitives, change materials and more. See the [Vercidium Audio docs](https://docs.vercidium.com/raytraced-audio/v110/Getting+Started) for more.
+Scene.cs is where you can adjust ray counts, add primitives, change materials and more. See the [Vercidium Audio docs](https://vercidium.com/docs) for more details.
 
 ## Controls
 
