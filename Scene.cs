@@ -46,7 +46,7 @@ internal class Scene
             MaxEchogramTime = 5000,
             EchogramGranularity = 50,
             Position = new vaudio.Vector(40, 50, 50),
-            HasRelativeReverb = true,
+            AffectsGroupedEAX = false,
 
             // Customise ray rendering
             PermeationColor = new vaudio.Color(255, 150, 0, 150),
