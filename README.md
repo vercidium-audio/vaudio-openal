@@ -1,6 +1,6 @@
 ## Vercidium Audio + OpenAL Soft Example
 
-This repository requires the Vercidium Audio SDK v1.2.1 and OpenAL Soft to run:
+This repository requires Vercidium Audio v1.3.0 and OpenAL Soft to run:
 - Download the Vercidium Audio SDK from [vercidium.com](https://vercidium.com)
 - Download the OpenAL Soft DLL from [github.com/kcat/openal-soft](https://github.com/kcat/openal-soft/releases/tag/1.25.1)
 
@@ -18,7 +18,7 @@ Edit `vaudio-openal.csproj` to point to the folder where the Vercidium Audio SDK
 <ItemGroup>
 	<Reference Include="vaudio">
 		<!-- Step 2 - replace this with the path to your Vercidium Audio .NET SDK -->
-		<HintPath>path\to\vercidium_audio_v1.2.1\dotnet\dev\vaudio.dll</HintPath>
+		<HintPath>C:\Users\YOU\Downloads\vercidium_audio_v1.3.0\dotnet\dev\vaudio.dll</HintPath>
 	</Reference>
 </ItemGroup>
 ```

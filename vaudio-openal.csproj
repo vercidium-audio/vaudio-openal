@@ -22,7 +22,7 @@
 	<ItemGroup>
 		<Reference Include="vaudio">
 			<!-- Step 2 - replace this with the path to your Vercidium Audio .NET SDK -->
-			<HintPath>path\to\vercidium_audio_v1.2.1\dotnet\dev\vaudio.dll</HintPath>
+			<HintPath>C:\Users\YOU\Downloads\vercidium_audio_v1.3.0\dotnet\dev\vaudio.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 
